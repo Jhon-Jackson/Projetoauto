@@ -11,14 +11,16 @@ pyautogui.PAUSE = 1.5
 time.sleep(5)
 
 caminho_atalho = r"C:\Users\Jhowzera\Desktop\AREA DE TRABALHO\PW FALCAO\pwlogin.bat"
-abrir_jogo(caminho_atalho)
+abrir_jogo(caminho_atalho) #função
 
 time.sleep(40)
-pyautogui.moveTo(x=957, y=542)
-pyautogui.click(button= 'right', clicks=1)
-pyautogui.press('b')
-tempo_limite = 30
-tempo_inicial = time.time()
+
+TeleCarrocinha()
+# pyautogui.moveTo(x=957, y=542)
+# pyautogui.click(button= 'right', clicks=1)
+# pyautogui.press('b')
+# tempo_limite = 30
+# tempo_inicial = time.time()
 
 imagem_encontrada = False
 
