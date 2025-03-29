@@ -59,7 +59,7 @@ tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
 # Lista de imagens a serem procuradas
 imagens_npc = ['Npc01.1.png', 'Npc01.png', 'npc01,11.png']
 
-# Loop principal
+44# Loop principal
 while True:
     try:
         time.sleep(5)  # Espera antes de girar a tela
