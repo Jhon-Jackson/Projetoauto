@@ -4,6 +4,7 @@ import subprocess
 import os
 from autopw.funçoes import *
 
+
 # pegar posiçoes do mouse e da tela
 # print(pyautogui.position())
 # print(pyautogui.size())
@@ -15,20 +16,20 @@ abrir_jogo(caminho_atalho) #função
 
 time.sleep(40)
 
-TeleCarrocinha()
+Tocartela()
 # pyautogui.moveTo(x=957, y=542)
 # pyautogui.click(button= 'right', clicks=1)
 # pyautogui.press('b')
-# tempo_limite = 30
-# tempo_inicial = time.time()
+
+tempo_limite = 30
+tempo_inicial = time.time()
 
 imagem_encontrada = False
 
-# pyautogui.press('b')
 time.sleep(1)
 while not imagem_encontrada and time.time() - tempo_inicial < tempo_limite:
     try:
-        x, y = pyautogui.locateCenterOnScreen('pergaminhoTele.png', confidence=0.8)
+        x, y = pyautogui.locateCenterOnScreen(r'imagenss\pergaminhoTele.png', confidence=0.8)
         pyautogui.moveTo(x, y)
         print("Imagem encontrada e clicada!")
         imagem_encontrada = True
@@ -59,7 +60,7 @@ tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
 # Lista de imagens a serem procuradas
 imagens_npc = ['Npc01.1.png', 'Npc01.png', 'npc01,11.png']
 
-44# Loop principal
+# Loop principal
 while True:
     try:
         time.sleep(5)  # Espera antes de girar a tela

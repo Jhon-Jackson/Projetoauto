@@ -1,6 +1,7 @@
 import subprocess
 import os
-
+import pyautogui
+import time
 
 def abrir_jogo(caminho_atalho):
   """
@@ -23,9 +24,7 @@ def abrir_jogo(caminho_atalho):
   except Exception as e:
     print(f"Erro ao abrir o jogo: {e}")
 
-def TeleCarrocinha():
+def Tocartela():
   pyautogui.moveTo(x=957, y=542)
   pyautogui.click(button='right', clicks=1)
   pyautogui.press('b')
-  tempo_limite = 30
-  tempo_inicial = time.time()
