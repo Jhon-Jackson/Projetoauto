@@ -1,20 +1,35 @@
 import pyautogui
 import time
+import subprocess
+import os
+from autopw.funçoes import *
 
-pyautogui.PAUSE = 2.5
+
+# pegar posiçoes do mouse e da tela
+# print(pyautogui.position())
+# print(pyautogui.size())
+pyautogui.PAUSE = 1.5
 time.sleep(5)
+
+caminho_atalho = r"C:\Users\Jhowzera\Desktop\AREA DE TRABALHO\PW FALCAO\pwlogin.bat"
+abrir_jogo(caminho_atalho) #função
+
+time.sleep(40)
+
+Tocartela()
+# pyautogui.moveTo(x=957, y=542)
+# pyautogui.click(button= 'right', clicks=1)
+# pyautogui.press('b')
 
 tempo_limite = 30
 tempo_inicial = time.time()
 
-
-
 imagem_encontrada = False
-pyautogui.press('b')
+
 time.sleep(1)
 while not imagem_encontrada and time.time() - tempo_inicial < tempo_limite:
     try:
-        x, y = pyautogui.locateCenterOnScreen('pergaminhoTele.png', confidence=0.8)
+        x, y = pyautogui.locateCenterOnScreen(r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\pergaminhoTele.png', confidence=0.8)
         pyautogui.moveTo(x, y)
         print("Imagem encontrada e clicada!")
         imagem_encontrada = True
@@ -30,19 +45,21 @@ if not imagem_encontrada:
 
 pyautogui.click(x, y, button='right', clicks=1)
 pyautogui.click(x=705, y=495)# posição quedanunca
-pyautogui.moveTo(x=1270, y=594)
+pyautogui.moveTo(x=1271, y=594)
 time.sleep(1)
-pyautogui.click(x=1270, y=594,button='left', clicks=2)# ponto de tela vila da alquimia
+pyautogui.click(x=1271, y=594,button='left', clicks=2)# ponto de tela vila da alquimia
 time.sleep(2)
 pyautogui.press('b')
-time.sleep(1)
 
-pyautogui.click(x=1789, y=112)#anda para perto do npc.
+time.sleep(2)
+
+pyautogui.click(x=1796, y=106)#ja em quedanunca, indo para perto do npc
 time.sleep(2)
 tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
 
 # Lista de imagens a serem procuradas
-imagens_npc = ['Npc01.1.png', 'Npc01.png', 'npc01,11.png']
+imagens_npc = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.1.png', r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.png', r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png']
+
 
 # Loop principal
 while True:
@@ -73,7 +90,4 @@ while True:
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
         break
-
-print("Fim do script.")
-
 

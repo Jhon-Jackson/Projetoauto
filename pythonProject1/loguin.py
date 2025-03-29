@@ -29,7 +29,7 @@ imagem_encontrada = False
 time.sleep(1)
 while not imagem_encontrada and time.time() - tempo_inicial < tempo_limite:
     try:
-        x, y = pyautogui.locateCenterOnScreen(r'imagenss\pergaminhoTele.png', confidence=0.8)
+        x, y = pyautogui.locateCenterOnScreen(r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\pergaminhoTele.png', confidence=0.8)
         pyautogui.moveTo(x, y)
         print("Imagem encontrada e clicada!")
         imagem_encontrada = True
@@ -45,25 +45,26 @@ if not imagem_encontrada:
 
 pyautogui.click(x, y, button='right', clicks=1)
 pyautogui.click(x=705, y=495)# posição quedanunca
-pyautogui.moveTo(x=1270, y=594)
+pyautogui.moveTo(x=1271, y=594)
 time.sleep(1)
-pyautogui.click(x=1270, y=594,button='left', clicks=2)# ponto de tela vila da alquimia
+pyautogui.click(x=1271, y=594,button='left', clicks=2)# ponto de tela vila da alquimia
 time.sleep(2)
 pyautogui.press('b')
 
 time.sleep(2)
 
-pyautogui.click(x=1776, y=112)#ja em quedanunca, indo para perto do npc
+pyautogui.click(x=1796, y=106)#ja em quedanunca, indo para perto do npc
 time.sleep(2)
 tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
 
 # Lista de imagens a serem procuradas
-imagens_npc = ['Npc01.1.png', 'Npc01.png', 'npc01,11.png']
+imagens_npc = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.1.png', r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.png', r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png']
+
 
 # Loop principal
 while True:
     try:
-        time.sleep(5)  # Espera antes de girar a tela
+        time.sleep(3)  # Espera antes de girar a tela
 
         # Girar a tela (movimentação relativa do mouse)
         pyautogui.mouseDown(button='right', x=1268, y=418)
