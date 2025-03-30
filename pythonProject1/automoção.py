@@ -10,3 +10,5 @@ print(pyautogui.position())
 # time.sleep(5)
 #
 # pyautogui.press('b')
+
+# S = Point(x=1816, y=61)

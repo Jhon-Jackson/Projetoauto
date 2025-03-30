@@ -3,6 +3,7 @@ import os
 import pyautogui
 import time
 
+
 def abrir_jogo(caminho_atalho):
   """
   Abre um jogo externo a partir de um arquivo de atalho (.lnk).
@@ -29,14 +30,37 @@ def Tocartela():
   pyautogui.click(button='right', clicks=1)
   pyautogui.press('b')
 
-# def buscarpc():
-#   Npc01()
-#
-# def Npc01(img):
-#   x, y = pyautogui.locateCenterOnScreen(img, confidense= 0.8)
-#   pyautogui.moveTo(x, y)
-#   return x, y
-#
-#
-# imagem = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png']
-# Npc01(imagem)
+def buscarnpc():
+    try:
+      while True:
+        # Girar a tela (movimentação relativa do mouse)
+        pyautogui.vscroll(10)
+        pyautogui.mouseDown(button='right', x=1268, y=418)
+        pyautogui.dragRel(-368, 0, button='right')  # Arrastar 368 pixels para a esquerda
+        pyautogui.mouseUp(button='right')
+        break
+    except KeyboardInterrupt:
+      print('\n')
+
+
+def NpcFrase1(img):
+  tempo_limite = 30
+  tempo_inicial = time.time()
+  imagem_encontrada = False
+  time.sleep(1)
+  while not imagem_encontrada and time.time() - tempo_inicial < tempo_limite:
+    try:
+      x, y = pyautogui.locateCenterOnScreen(img, confidence=0.8)
+      pyautogui.moveTo(x, y)
+      print("Imagem encontrada e clicada!")
+      imagem_encontrada = True
+    except pyautogui.ImageNotFoundException:
+      time.sleep(1)
+      print('Imagem não encontrada. Tentando novamente...')
+      buscarnpc()
+    except Exception as e:
+      print(f"Ocorreu um erro: {e}")
+      break
+
+  return x, y
+

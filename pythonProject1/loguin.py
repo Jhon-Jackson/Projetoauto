@@ -91,4 +91,17 @@ while True:
         print(f"Ocorreu um erro: {e}")
         break
 
+img = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png'
+img2 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\frasenpc01.png'
+
+time.sleep(5)
+local = NpcFrase1(img)
+print(local)
+pyautogui.click(local)
+time.sleep(3)
+cliclar = NpcFrase1(img2)
+pyautogui.click(cliclar)
+pyautogui.press('space', presses=2,interval=1)
+
+
 print("Fim do script.")
