@@ -93,6 +93,8 @@ while True:
 
 img = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png'
 
+img2 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\frasenpc01.png'
+
 time.sleep(5)
 local = NpcFrase1(img)
 print(local)

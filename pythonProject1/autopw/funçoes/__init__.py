@@ -50,7 +50,7 @@ def NpcFrase1(img,w=0,h=0):
   time.sleep(1)
   while not imagem_encontrada and time.time() - tempo_inicial < tempo_limite:
     try:
-      x, y = pyautogui.locateCenterOnScreen(img, confidence=0.8, region=(0,0, w, h))
+      x, y = pyautogui.locateCenterOnScreen(img, confidence=0.8) #region=(0,0, w, h))
       pyautogui.moveTo(x, y)
       print("Imagem encontrada e clicada!")
       imagem_encontrada = True
