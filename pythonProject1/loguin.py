@@ -47,9 +47,9 @@ pyautogui.click(x, y, button='right', clicks=1)
 pyautogui.click(x=705, y=495)# posição quedanunca
 #pyautogui.moveTo(x=1271, y=594)
 time.sleep(1)
-imgTelealquimia = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\my.Telalguimia.png'
+imgTelealquimia = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Telealquimia.png'
 time.sleep(1)
-local = pyautogui.locateOnScreen(imgTelealquimia, confidence=0.5, region=(1262, 592, 29, 14))
+local = pyautogui.locateOnScreen(imgTelealquimia, confidence=0.6, region=(1253, 583, 44, 25))
 time.sleep(1)
 pyautogui.click(imgTelealquimia,button='left', clicks=2)# ponto de tela vila da alquimia
 time.sleep(2)
@@ -57,46 +57,13 @@ pyautogui.press('b')
 
 time.sleep(2)
 
-pyautogui.click(x=1796, y=106)#ja em quedanunca, indo para perto do npc
+clickpertonpc()
+
 time.sleep(2)
-tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
 
-# Lista de imagens a serem procuradas
-imagens_npc = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.1.png', r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.png', r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png']
-
-
-# Loop principal
-while True:
-    try:
-        time.sleep(3)  # Espera antes de girar a tela
-
-        # Girar a tela (movimentação relativa do mouse)
-        pyautogui.mouseDown(button='right', x=1268, y=418)
-        pyautogui.dragRel(-368, 0, button='right')  # Arrastar 368 pixels para a esquerda
-        pyautogui.mouseUp(button='right')
-
-        # Buscar pelas imagens
-        for imagem in imagens_npc:
-            try:
-                x, y = pyautogui.locateCenterOnScreen(imagem, confidence=0.8)
-                pyautogui.click(x, y)
-                print(f"Imagem {imagem} encontrada e clicada!")
-                break  # Sai do loop após encontrar a imagem
-            except pyautogui.ImageNotFoundException:
-                print(f"Imagem {imagem} não encontrada. Tentando próxima...")
-                continue  # Tenta a próxima imagem
-        else:  # Executado se nenhuma imagem for encontrada
-            print("Nenhuma imagem de NPC encontrada.")
-            continue # Volta para o início do loop para tentar novamente
-
-        break  # Sai do loop principal se alguma imagem for encontrada e clicada
-
-    except Exception as e:
-        print(f"Ocorreu um erro: {e}")
-        break
+acharnpc()
 
 img = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png'
-
 img2 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\frasenpc01.png'
 
 time.sleep(5)

@@ -9,5 +9,9 @@ pyautogui.position()
 print(pyautogui.position())
 
 # posição TeleAlquimia
-# x Point(x=1262, 29, y=592, 14) y Point(x=1291, y=606)
-# w 29 l 14
+# x Point(x=1253, y=583, 44 l 25) y Point(x=1297, y=608)
+# w 44 l 25
+
+# posião mini mapa
+# Point(x=1768, y=52)  Point(x=1881, y=158)
+# regiao(w=113, l=106)
