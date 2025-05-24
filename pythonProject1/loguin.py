@@ -45,9 +45,13 @@ if not imagem_encontrada:
 
 pyautogui.click(x, y, button='right', clicks=1)
 pyautogui.click(x=705, y=495)# posição quedanunca
-pyautogui.moveTo(x=1271, y=594)
+#pyautogui.moveTo(x=1271, y=594)
 time.sleep(1)
-pyautogui.click(x=1271, y=594,button='left', clicks=2)# ponto de tela vila da alquimia
+imgTelealquimia = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\my.Telalguimia.png'
+time.sleep(1)
+local = pyautogui.locateOnScreen(imgTelealquimia, confidence=0.5, region=(1262, 592, 29, 14))
+time.sleep(1)
+pyautogui.click(imgTelealquimia,button='left', clicks=2)# ponto de tela vila da alquimia
 time.sleep(2)
 pyautogui.press('b')
 
