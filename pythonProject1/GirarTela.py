@@ -7,23 +7,25 @@ from autopw.funçoes import *
 
 time.sleep(3)
 
-img3 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png'
-n = 1
+img3 = [
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc.png',
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png',
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc2.png',
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc3.png']
 time.sleep(2)
 while True:
     time.sleep(1)
     try:
-
-        while True:
+        for img in img3:
             try:
-                local = pyautogui.locateOnScreen(img3, confidence=0.4, region=(1768, 52, 113, 106))
+                local = pyautogui.locateOnScreen(img, confidence=0.4, region=(1768, 52, 113, 106))
                 pyautogui.moveTo(local)
                 print("imagem encontrada")
                 break
             except pyautogui.ImageNotFoundException:
-                time.sleep(1)
+                time.sleep(2)
                 buscarnpc()
-                print(f"Imagem {img3} não encontrada. Tentando próxima...")
+                print(f"Imagem {img} não encontrada. Tentando próxima...")
                 continue  # Tenta a próxima imagem
         else:  # Executado se nenhuma imagem for encontrada
             print("Nenhuma imagem de NPC encontrada.")

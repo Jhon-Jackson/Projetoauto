@@ -67,13 +67,10 @@ def NpcFrase1(img,w=0,h=0):
 
 def clickpertonpc():
   time.sleep(3)
-
   img3 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png'
-  time.sleep(2)
   while True:
     time.sleep(1)
     try:
-
       while True:
         try:
           local = pyautogui.locateOnScreen(img3, confidence=0.4, region=(1768, 52, 113, 106))
@@ -97,7 +94,6 @@ def clickpertonpc():
 
 def acharnpc():
   tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
-
   # Lista de imagens a serem procuradas
   imagens_npc = [
     r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.1.png',
