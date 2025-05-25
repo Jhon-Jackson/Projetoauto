@@ -49,10 +49,12 @@ pyautogui.click(x=705, y=495)# posição quedanunca
 time.sleep(1)
 imgTelealquimia = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Telealquimia.png'
 time.sleep(1)
-local = pyautogui.locateOnScreen(imgTelealquimia, confidence=0.6, region=(1253, 583, 44, 25))
+clicar = localisarimg(imgTelealquimia,1235, 578, 94, 40)
+# local = pyautogui.locateOnScreen(imgTelealquimia, confidence=0.3, region=(1235, 578, 94, 40))
 time.sleep(1)
-pyautogui.click(imgTelealquimia,button='left', clicks=2)# ponto de tela vila da alquimia
+pyautogui.click(clicar,button='left', clicks=2)# ponto de tela vila da alquimia
 time.sleep(2)
+
 pyautogui.press('b')
 
 time.sleep(2)
