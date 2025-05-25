@@ -67,20 +67,24 @@ def NpcFrase1(img,w=0,h=0):
 
 def clickpertonpc():
   time.sleep(3)
-  img3 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png'
+  img3 = [
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa.png']
+
+  time.sleep(2)
   while True:
     time.sleep(1)
     try:
-      while True:
+      for img in img3:
         try:
-          local = pyautogui.locateOnScreen(img3, confidence=0.4, region=(1768, 52, 113, 106))
-          pyautogui.moveTo(local)
+          local = pyautogui.locateOnScreen(img, confidence=0.5, region=(1720, 41, 172, 136))
+          # pyautogui.moveTo(local)
+          pyautogui.click(1833, 78, button='left', clicks=1)
           print("imagem encontrada")
           break
         except pyautogui.ImageNotFoundException:
           time.sleep(1)
           buscarnpc()
-          print(f"Imagem {img3} não encontrada. Tentando próxima...")
+          print(f"Imagem {img} não encontrada. Tentando próxima...")
           continue  # Tenta a próxima imagem
       else:  # Executado se nenhuma imagem for encontrada
         print("Nenhuma imagem de NPC encontrada.")

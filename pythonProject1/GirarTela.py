@@ -8,18 +8,17 @@ from autopw.funçoes import *
 time.sleep(3)
 
 img3 = [
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png']
-    # r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc2.png',
-    # r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc3.png']
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa.png']
+
 time.sleep(2)
 while True:
     time.sleep(1)
     try:
         for img in img3:
             try:
-                local = pyautogui.locateOnScreen(img, confidence=0.3, region=(1720, 41, 172, 136))
-                pyautogui.moveTo(local)
+                local = pyautogui.locateOnScreen(img, confidence=0.5, region=(1720, 41, 172, 136))
+                # pyautogui.moveTo(local)
+                pyautogui.click(1833, 78, button='left', clicks=1)
                 print("imagem encontrada")
                 break
             except pyautogui.ImageNotFoundException:

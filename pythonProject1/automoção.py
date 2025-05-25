@@ -15,3 +15,6 @@ print(pyautogui.position())
 # posião mini mapa
 # Point(x=1720, y=41)  Point(x=1892, y=177)
 # regiao(w=172, h=136)
+
+#clicar proximo npc
+#Point(x=1833, y=78)
