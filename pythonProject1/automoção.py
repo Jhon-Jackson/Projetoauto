@@ -13,5 +13,5 @@ print(pyautogui.position())
 # w 44 l 25
 
 # posião mini mapa
-# Point(x=1768, y=52)  Point(x=1881, y=158)
-# regiao(w=113, l=106)
+# Point(x=1720, y=41)  Point(x=1892, y=177)
+# regiao(w=172, h=136)

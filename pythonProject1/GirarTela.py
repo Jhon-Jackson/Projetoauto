@@ -9,21 +9,21 @@ time.sleep(3)
 
 img3 = [
     r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc2.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc3.png']
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc1.png']
+    # r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc2.png',
+    # r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\clickpertonpc3.png']
 time.sleep(2)
 while True:
     time.sleep(1)
     try:
         for img in img3:
             try:
-                local = pyautogui.locateOnScreen(img, confidence=0.4, region=(1768, 52, 113, 106))
+                local = pyautogui.locateOnScreen(img, confidence=0.3, region=(1720, 41, 172, 136))
                 pyautogui.moveTo(local)
                 print("imagem encontrada")
                 break
             except pyautogui.ImageNotFoundException:
-                time.sleep(2)
+                time.sleep(1)
                 buscarnpc()
                 print(f"Imagem {img} não encontrada. Tentando próxima...")
                 continue  # Tenta a próxima imagem
