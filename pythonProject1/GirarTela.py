@@ -8,7 +8,7 @@ from autopw.funçoes import *
 time.sleep(3)
 
 img3 = [
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa.png']
+    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\mapa1_cinza.png']
 
 time.sleep(2)
 while True:
@@ -16,7 +16,7 @@ while True:
     try:
         for img in img3:
             try:
-                local = pyautogui.locateOnScreen(img, confidence=0.5, region=(1720, 41, 172, 136))
+                local = pyautogui.locateOnScreen(img, confidence=0.7, region=(1720, 41, 172, 136))
                 # pyautogui.moveTo(local)
                 pyautogui.click(1833, 78, button='left', clicks=1)
                 print("imagem encontrada")
@@ -35,3 +35,4 @@ while True:
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
         break
+

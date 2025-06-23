@@ -2,6 +2,7 @@ import subprocess
 import os
 import pyautogui
 import time
+import cv2
 
 
 def abrir_jogo(caminho_atalho):
@@ -28,7 +29,14 @@ def abrir_jogo(caminho_atalho):
 def Tocartela():
   pyautogui.moveTo(x=957, y=542)
   pyautogui.click(button='right', clicks=1)
-  pyautogui.press('b')
+  img1 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\iconecorreio_cinza.png'
+  while True:
+    try:
+      localisarimg(img1, 1877, 36, 24, 15)
+      pyautogui.press('b')
+      break
+    except:
+      continue
 
 def buscarnpc():
     try:
@@ -153,7 +161,7 @@ def localisarimg(n,px=0,py=0,rw=0,rh=0):
           print(f"Imagem {img} não encontrada. Tentando próxima...")
           continue  # Tenta a próxima imagem
       else:  # Executado se nenhuma imagem for encontrada
-        print("Nenhuma imagem de NPC encontrada.")
+        print("Nenhuma imagem encontrada.")
         continue  # Volta para o início do loop para tentar novamente
 
       break  # Sai do loop principal se alguma imagem for encontrada e clicada
@@ -162,3 +170,14 @@ def localisarimg(n,px=0,py=0,rw=0,rh=0):
       print(f"Ocorreu um erro: {e}")
       break
     return local
+
+def ConverterGray (img):
+  imagem = cv2.imread(img)
+  #
+  # Conveter para tons de Cinza
+  img_convertida = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
+  # Guarda a imagem
+  img_saida = img.replace(".png", "_cinza.png")
+  cv2.imwrite(img_saida, img_convertida)
+  return img_saida
+

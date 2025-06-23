@@ -18,3 +18,5 @@ print(pyautogui.position())
 
 #clicar proximo npc
 #Point(x=1833, y=78)
+#icone correio
+#Point region=(1877, 36, 24, 15)
