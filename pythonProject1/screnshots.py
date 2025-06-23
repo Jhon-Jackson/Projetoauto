@@ -8,8 +8,8 @@ pyautogui.PAUSE = 2.5
 time.sleep(5)
 
 #img = pyautogui.screenshot('autopw/imagenss/minimapa.png', region=(1720, 41, 172, 136))
-img = pyautogui.screenshot('autopw/imagenss/mapa1.png', region=(1720, 41, 172, 136))
-img1 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\mapa1.png'
+img = pyautogui.screenshot('autopw/imagenss/coord1.png', region=(1827, 9, 50, 15))
+img1 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\coord1.png'
 
 ConverterGray(img1)
 # img_cinza = cv2.imread(img1, cv2.IMREAD_GRAYSCALE)

@@ -20,3 +20,6 @@ print(pyautogui.position())
 #Point(x=1833, y=78)
 #icone correio
 #Point region=(1877, 36, 24, 15)
+
+#coordenadas
+# Point region=(1827, 9, 50, 15))
