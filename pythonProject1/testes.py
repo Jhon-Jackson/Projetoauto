@@ -14,8 +14,13 @@ img3 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProjec
 while True:
     try:
         for img in img3:
-            pyautogui.keyDown('w')
-            time.sleep(0.5)
+            if img not in img3:
+                img = pyautogui.locateOnScreen(img3,1827, 9, 50, 15)
+                pyautogui.keyDown('w')
+                time.sleep(0.5)
+            else:
+                continue
+
         break
 
     except:
