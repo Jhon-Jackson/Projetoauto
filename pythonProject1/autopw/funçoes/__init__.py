@@ -93,7 +93,6 @@ def acharnpc(img):
 
 def localisarimg(n,con=0.7,px=0,py=0,rw=1903,rh=1054):
   img3 = n
-  time.sleep(2)
   while True:
     time.sleep(1)
     try:
@@ -103,7 +102,7 @@ def localisarimg(n,con=0.7,px=0,py=0,rw=1903,rh=1054):
           pyautogui.moveTo(local)
           print("imagem encontrada")
         except pyautogui.ImageNotFoundException:
-          time.sleep(1)
+
           print(f"Imagem {img} não encontrada. Tentando próxima...")
           continue  # Tenta a próxima imagem
         else:  # Executado se nenhuma imagem for encontrada
