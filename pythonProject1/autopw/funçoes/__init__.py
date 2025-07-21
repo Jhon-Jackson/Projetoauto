@@ -26,19 +26,21 @@ def abrir_jogo(caminho_atalho):
   except Exception as e:
     print(f"Erro ao abrir o jogo: {e}")
 
+
 def Tocartela():
   pyautogui.moveTo(x=957, y=542)
   pyautogui.click(button='right', clicks=1)
   img1 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\iconecorreio_cinza.png'
   while True:
     try:
-      localisarimg(img1, 1877, 36, 24, 15)
+      localisarimg(img1,0.5, 1873, 31, 26, 25)
       pyautogui.press('b')
       break
     except:
       continue
 
-def buscarnpc():
+
+def GirarTela():
     try:
       while True:
         # Girar a tela (movimentação relativa do mouse)
@@ -65,7 +67,7 @@ def NpcFrase1(img,w=0,h=0):
     except pyautogui.ImageNotFoundException:
       time.sleep(1)
       print('Imagem não encontrada. Tentando novamente...')
-      buscarnpc()
+      GirarTela()
     except Exception as e:
       print(f"Ocorreu um erro: {e}")
       break
@@ -73,103 +75,47 @@ def NpcFrase1(img,w=0,h=0):
   return x, y
 
 
-def clickpertonpc():
-  time.sleep(3)
-  img3 = [
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa.png']
-
-  time.sleep(2)
-  while True:
-    time.sleep(1)
-    try:
-      for img in img3:
-        try:
-          local = pyautogui.locateOnScreen(img, confidence=0.5, region=(1720, 41, 172, 136))
-          # pyautogui.moveTo(local)
-          pyautogui.click(1833, 78, button='left', clicks=1)
-          print("imagem encontrada")
-          break
-        except pyautogui.ImageNotFoundException:
-          time.sleep(1)
-          buscarnpc()
-          print(f"Imagem {img} não encontrada. Tentando próxima...")
-          continue  # Tenta a próxima imagem
-      else:  # Executado se nenhuma imagem for encontrada
-        print("Nenhuma imagem de NPC encontrada.")
-        continue  # Volta para o início do loop para tentar novamente
-
-      break  # Sai do loop principal se alguma imagem for encontrada e clicada
-
-    except Exception as e:
-      print(f"Ocorreu um erro: {e}")
-      break
-
-def acharnpc():
-  tempo_limite = 30  # Tempo limite para a busca de imagem (segundos)
+def acharnpc(img):
   # Lista de imagens a serem procuradas
-  imagens_npc = [
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.1.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\Npc01.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc01,11.png',
-    r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\npc1.2.png']
-
+  imagens_npc = [img]
+  print(imagens_npc)
   # Loop principal
   while True:
     try:
       time.sleep(3)  # Espera antes de girar a tela
-
-      # Girar a tela (movimentação relativa do mouse)
-      pyautogui.mouseDown(button='right', x=1268, y=418)
-      pyautogui.dragRel(-368, 0, button='right')  # Arrastar 368 pixels para a esquerda
-      pyautogui.mouseUp(button='right')
-
-      # Buscar pelas imagens
-      for imagem in imagens_npc:
-        try:
-          x, y = pyautogui.locateCenterOnScreen(imagem, confidence=0.8)
-          pyautogui.click(x, y)
-          print(f"Imagem {imagem} encontrada e clicada!")
-          break  # Sai do loop após encontrar a imagem
-        except pyautogui.ImageNotFoundException:
-          print(f"Imagem {imagem} não encontrada. Tentando próxima...")
-          continue  # Tenta a próxima imagem
-      else:  # Executado se nenhuma imagem for encontrada
-        print("Nenhuma imagem de NPC encontrada.")
-        continue  # Volta para o início do loop para tentar novamente
-
-      break  # Sai do loop principal se alguma imagem for encontrada e clicada
-
+      GirarTela()  # Girar a tela (movimentação relativa do mouse)
+      localisarimg(imagens_npc,0.8)  # Buscar pelas imagens
     except Exception as e:
-      print(f"Ocorreu um erro: {e}")
-      break
+      print("Erro ao localizar")
+      continue
+    break
 
-def localisarimg(n,px=0,py=0,rw=0,rh=0):
-  time.sleep(3)
-  img3 = [n]
+
+def localisarimg(n,con=0.7,px=0,py=0,rw=1903,rh=1054):
+  img3 = n
   time.sleep(2)
   while True:
     time.sleep(1)
     try:
       for img in img3:
         try:
-          local = pyautogui.locateOnScreen(img, confidence=0.5, region=(px, py, rw, rh))
+          local = pyautogui.locateOnScreen(img, confidence=con, region=(px, py, rw, rh))
           pyautogui.moveTo(local)
           print("imagem encontrada")
-          break
         except pyautogui.ImageNotFoundException:
           time.sleep(1)
           print(f"Imagem {img} não encontrada. Tentando próxima...")
           continue  # Tenta a próxima imagem
-      else:  # Executado se nenhuma imagem for encontrada
-        print("Nenhuma imagem encontrada.")
-        continue  # Volta para o início do loop para tentar novamente
-
-      break  # Sai do loop principal se alguma imagem for encontrada e clicada
-
+        else:  # Executado se nenhuma imagem for encontrada
+          print("Nenhuma imagem encontrada.")
+          continue  # Volta para o início do loop para tentar novamente
+        break  # Sai do loop principal se alguma imagem for encontrada e clicada
     except Exception as e:
       print(f"Ocorreu um erro: {e}")
       break
+
     return local
+
 
 def ConverterGray (img):
   imagem = cv2.imread(img)

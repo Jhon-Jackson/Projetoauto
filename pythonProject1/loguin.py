@@ -10,17 +10,18 @@ from autopw.funçoes import *
 # print(pyautogui.size())
 pyautogui.PAUSE = 1.5
 time.sleep(5)
-
+# Fazer loguin
 caminho_atalho = r"C:\Users\Jhowzera\Desktop\AREA DE TRABALHO\PW FALCAO\pwlogin.bat"
 abrir_jogo(caminho_atalho) #função
 
 time.sleep(40)
-
+# esperar logar e  abrir bag
 Tocartela()
 # pyautogui.moveTo(x=957, y=542)
 # pyautogui.click(button= 'right', clicks=1)
 # pyautogui.press('b')
 
+#Procurar Pergaminho Teletransporte.
 tempo_limite = 30
 tempo_inicial = time.time()
 
@@ -43,6 +44,7 @@ while not imagem_encontrada and time.time() - tempo_inicial < tempo_limite:
 if not imagem_encontrada:
     print(f"Tempo limite de {tempo_limite} segundos excedido. Imagem não encontrada.")
 
+# Telar para quedanunca
 pyautogui.click(x, y, button='right', clicks=1)
 pyautogui.click(x=705, y=495)# posição quedanunca
 #pyautogui.moveTo(x=1271, y=594)
@@ -79,3 +81,4 @@ pyautogui.press('space', presses=2,interval=1)
 
 
 print("Fim do script.")
+

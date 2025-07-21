@@ -14,12 +14,13 @@ print(pyautogui.position())
 
 # posião mini mapa
 # Point(x=1720, y=41)  Point(x=1892, y=177)
-# regiao(w=172, h=136)
+# regiao(x=1720, y=41, w=172, h=136)
 
 #clicar proximo npc
 #Point(x=1833, y=78)
+
 #icone correio
-#Point region=(1877, 36, 24, 15)
+#Point region=(1873, 31, 26, 25)
 
 #coordenadas
 # Point region=(1827, 9, 50, 15))
