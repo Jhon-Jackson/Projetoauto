@@ -9,17 +9,7 @@ from autopw.funçoes import *
 pyautogui.PAUSE = 1.5
 time.sleep(4)
 
-# X,Y = 592, 506
-# print(X, Y)
-#
-# while True:
-#     if X > 586 and Y <= 506:
-#         pyautogui.keyDown('w')
-#         X -= 1
-#         time.sleep(0.4)
-#     elif X == 586:
-#         pyautogui.keyUp('w')
-#         break
+
 
 Direção = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\mapa1_cinza.png',
            r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa2_cinza.png',
@@ -27,7 +17,7 @@ Direção = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\python
            r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa4_cinza.png',
            r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa5_cinza.png',
            r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\minimapa6_cinza.png']
-#Direção1 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\pergaminhoTele.png'
+
 while True:
     GirarTela()
     while True:

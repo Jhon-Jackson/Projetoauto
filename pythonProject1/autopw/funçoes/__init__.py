@@ -30,7 +30,7 @@ def abrir_jogo(caminho_atalho):
 def Tocartela():
   pyautogui.moveTo(x=957, y=542)
   pyautogui.click(button='right', clicks=1)
-  img1 = r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\iconecorreio_cinza.png'
+  img1 = [r'C:\Users\Jhowzera\PycharmProjects\CursoemVideo\Projetoauto\pythonProject1\autopw\imagenss\icon\iconecorreio_cinza.png']
   while True:
     try:
       localisarimg(img1,0.5, 1873, 31, 26, 25)
@@ -75,22 +75,6 @@ def NpcFrase1(img,w=0,h=0):
   return x, y
 
 
-def acharnpc(img):
-  # Lista de imagens a serem procuradas
-  imagens_npc = [img]
-  print(imagens_npc)
-  # Loop principal
-  while True:
-    try:
-      time.sleep(3)  # Espera antes de girar a tela
-      GirarTela()  # Girar a tela (movimentação relativa do mouse)
-      localisarimg(imagens_npc,0.8)  # Buscar pelas imagens
-    except Exception as e:
-      print("Erro ao localizar")
-      continue
-    break
-
-
 def localisarimg(n,con=0.7,px=0,py=0,rw=1903,rh=1054):
   img3 = n
   while True:
@@ -126,3 +110,15 @@ def ConverterGray (img):
   cv2.imwrite(img_saida, img_convertida)
   return img_saida
 
+def Andar(a, b, c , d):
+    IX,IY = a, b
+    FX, FY = c, d
+
+    while True:
+        if IX > FX and FY <= 506:
+            pyautogui.keyDown('w')
+            IX -= 1
+            time.sleep(0.4)
+        elif IX or IY == FX or FY:
+            pyautogui.keyUp('w')
+            break
