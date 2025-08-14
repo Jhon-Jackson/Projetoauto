@@ -115,10 +115,10 @@ def Andar(a, b, c , d):
     FX, FY = c, d
 
     while True:
-        if IX > FX and FY <= 506:
+        if IX > FX and FY <= IY:
             pyautogui.keyDown('w')
             IX -= 1
             time.sleep(0.4)
-        elif IX or IY == FX or FY:
+        elif IX and IY <= FX and FY:
             pyautogui.keyUp('w')
             break
